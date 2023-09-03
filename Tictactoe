@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+<style>
+    .board{
+    display: grid;
+    grid-template-columns: repeat(3,100px):
+    grid-gap: 5px;
+}
+    .cell{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board"></div>
+    <p id="message"></p>
+    <script>
+        const board = document.getElementById('boatd');
+        const message = document.getElementById('message');
+        let currentPlayer = 'X';
+        let cells = ['','','','','','','','',''];
+        let gameActive = true;
+        for(let i = 0; i< 9; i++){
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.dataset.index = i;
+            cell.addEventListener('click', handleCellClick);
+            board.appendChild(cell);
+        }
+
+    </script>
